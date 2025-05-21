@@ -70,6 +70,15 @@ img {
   margin-bottom: 0.5rem;
 }
 
+.consulta-status {
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  background: var(--cor-principal);
+  color: white;
+  border-radius: 12px;
+}
+
 .botao-outline:hover {
   background: var(--cor-principal);
   color: white;
