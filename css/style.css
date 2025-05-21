@@ -27,8 +27,23 @@ body {
   line-height: 1.6;
 }
 
+
+.container-geral {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
 img {
-    max-width: 400px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.cartao img {
+  border-radius: 50%;
+  max-width: 300px;
 }
 
 .botao {
@@ -42,6 +57,10 @@ img {
   margin: 0.5rem;
 }
 
+.botao:hover {
+  background: var(--cor-secundaria);
+}
+
 .botao-outline {
   background: transparent;
   color: var(--cor-principal);
@@ -51,7 +70,10 @@ img {
   margin-bottom: 0.5rem;
 }
 
-
+.botao-outline:hover {
+  background: var(--cor-principal);
+  color: white;
+}
 
 /* -- Estilizaçao do nosso Header -- */
 
@@ -96,6 +118,12 @@ nav a {
   white-space: nowrap;
 }
 
+nav a:hover {
+  color: var(--cor-secundaria);
+  background: var(--cor-cinza);
+  transition: 0.2s;
+}
+
 .auth-botaos {
   display: flex;
   gap: 0.5rem;
@@ -103,4 +131,131 @@ nav a {
   margin-left: auto;
 }
 
+/* -- Estilização da Main --  */
+
+.page-cabecalho {
+  background: var(--cor-secundaria);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: var(--borda);
+  margin: 2rem 0 1.5rem;
+}
+
+.page-cabecalho {
+  background: var(--cor-secundaria);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: var(--borda);
+  margin: 2rem 0 1.5rem;
+}
+
+.secao-destaque {
+  padding: 2rem 1rem;
+  background: var(--cor-cinza);
+  border-radius: var(--borda);
+  margin-bottom: 2rem;
+}
+
+.secao-destaque .container-geral {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.secao-destaque-content {
+  flex: 1 1 50%;
+}
+
+.secao-destaque-image {
+  flex: 1 1 40%;
+  text-align: right;
+}
+
+.secao-destaque-botaos, .consulta-actions {
+  margin: 0.8rem 0;
+}
+
+.secao-grid {
+  display: grid;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+.cartao, .option-cartao {
+  background: white;
+  padding: 1.5rem;
+  transition: 0.3s;
+}
+
+.cartao:hover, .option-cartao:hover {
+  background: var(--cor-cinza);
+}
+
+.consulta-cartao {
+  background: white;
+  padding: 1rem;
+  border-radius: var(--borda);
+  border: 1px solid var(--cor-borda);
+  margin-bottom: 1rem;
+}
+
+/* -- Estilizando o footer -- */
+
+footer {
+  background: var(--cor-footer);
+  color: var(--cor-footer-texto);
+  padding: 2rem 1rem 1rem;
+  margin-top: 3rem;
+}
+
+footer .container-geral {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.rodape-secao {
+  flex: 1 1 200px;
+}
+
+.rodape-secao h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--cor-principal);
+}
+
+.rodape-secao ul {
+  list-style: none;
+  padding: 0;
+}
+
+.rodape-secao li {
+  margin-bottom: 0.3rem;
+}
+
+.rodape-secao a {
+  color: var(--cor-footer-texto);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.rodape-secao a:hover {
+  color: var(--cor-terciaria);
+  text-decoration: underline;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #bbb;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
 
