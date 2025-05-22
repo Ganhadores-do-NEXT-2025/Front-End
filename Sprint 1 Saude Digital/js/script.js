@@ -1,36 +1,99 @@
-// Toggle dos blocos para o FAQ
-const perguntas = document.querySelectorAll('.question-cabecalho');
-  perguntas.forEach(pergunta => {
-    pergunta.addEventListener('click', function () {
-      const pai = this.parentElement;
-      pai.classList.toggle('active');
-    });
+// Toggle dos blocos de FAQ
+document.querySelectorAll('.question-cabecalho').forEach(pergunta => {
+  pergunta.addEventListener('click', () => {
+    pergunta.parentElement.classList.toggle('active');
   });
+});
 
-// Webchat
-  window.watsonAssistantChatOptions = {
-            integrationID: "42168497-c1df-47d0-b51c-c8596800bdb2",
-            region: "au-syd",
-            serviceInstanceID: "caa63f65-088b-4f37-9de8-7af5a9ee725b",
-            onLoad: async (instance) => { await instance.render(); }
-        };
-        setTimeout(function () {
-            const t = document.createElement('script');
-            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
-                (window.watsonAssistantChatOptions.clientVersion || 'latest') +
-                "/WatsonAssistantChatEntry.js";
-            document.head.appendChild(t);
-        });
+// Função utilitária para aplicar máscara de CPF
+function aplicarMascaraCPF(input) {
+  input.addEventListener('input', ({ target }) => {
+    let v = target.value.replace(/\D/g, '');
+    v = v.replace(/(\d{3})(\d)/, '$1.$2')
+         .replace(/(\d{3})(\d)/, '$1.$2')
+         .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    target.value = v;
+  });
+}
 
-// Script para Login
-  const loginForm = document.getElementById('loginForm');
-  if (loginForm) {
-    const cpf = document.getElementById('cpf');
-    if (cpf) aplicarMascaraCPF(cpf);
+// Função utilitária para aplicar máscara de Telefone
+function aplicarMascaraTelefone(input) {
+  input.addEventListener('input', ({ target }) => {
+    let v = target.value.replace(/\D/g, '');
+    v = v.replace(/(\d{2})(\d)/, '($1) $2')
+         .replace(/(\d{5})(\d)/, '$1-$2');
+    target.value = v;
+  });
+}
 
-    loginForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      alert('Login realizado com sucesso!');
-      window.location.href = '../index.html';
-    });
-  }
+// Tratamento do formulário de reagendamento/cancelamento
+const consultaForm = document.getElementById('reagendarForm');
+if (consultaForm) {
+  consultaForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const botao = consultaForm.querySelector('button[type="submit"]');
+    const textoBotao = botao.textContent.toLowerCase();
+    if (textoBotao.includes('reagendar')) {
+      alert('Consulta reagendada com sucesso!');
+    } else if (textoBotao.includes('cancelamento')) {
+      alert('Consulta cancelada com sucesso!');
+    }
+    window.location.href = 'meus-agendamentos.html';
+  });
+}
+
+// Webchat IBM Watson Assistant
+window.watsonAssistantChatOptions = {
+  integrationID: "42168497-c1df-47d0-b51c-c8596800bdb2",
+  region: "au-syd",
+  serviceInstanceID: "caa63f65-088b-4f37-9de8-7af5a9ee725b",
+  onLoad: async (instance) => await instance.render()
+};
+setTimeout(() => {
+  const script = document.createElement('script');
+  script.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+               (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+               "/WatsonAssistantChatEntry.js";
+  document.head.appendChild(script);
+}, 0);
+
+// Formulário de Login
+const loginForm = document.getElementById('loginForm');
+if (loginForm) {
+  const cpf = document.getElementById('cpf');
+  if (cpf) aplicarMascaraCPF(cpf);
+
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Login realizado com sucesso!');
+    window.location.href = '../index.html';
+  });
+}
+
+// Formulário de Cadastro
+const registerForm = document.getElementById('registerForm');
+if (registerForm) {
+  const cpf = document.getElementById('cpf');
+  const tel = document.getElementById('telefone');
+  if (cpf) aplicarMascaraCPF(cpf);
+  if (tel) aplicarMascaraTelefone(tel);
+
+  registerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const senha = document.getElementById('senha').value;
+    const confirmar = document.getElementById('confirmar-senha').value;
+
+    if (senha !== confirmar) {
+      alert('As senhas não coincidem!');
+      return;
+    }
+
+    if (senha.length < 8) {
+      alert('A senha deve ter no mínimo 8 caracteres!');
+      return;
+    }
+
+    alert('Cadastro feito com sucesso!');
+    window.location.href = './login.html';
+  });
+}

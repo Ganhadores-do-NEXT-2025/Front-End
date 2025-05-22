@@ -47,7 +47,50 @@
     </header>
 
     <main>
-        
+        <section class="auth-container-geral">
+            <div class="container-geral">
+                <div class="auth-cartao">
+                    <h2>Crie sua conta</h2>
+                    <p>Preencha os dados abaixo para se cadastrar</p>
+                    <form id="registerForm">
+                        <div class="formulario-group">
+                            <label for="nome">Nome Completo</label>
+                            <input id="nome" name="nome" placeholder="Digite seu nome completo" required=""
+                                type="text" />
+                        </div>
+                        <div class="formulario-group">
+                            <label for="cpf">CPF</label>
+                            <input id="cpf" name="cpf" placeholder="000.000.000-00" required="" type="text" />
+                        </div>
+                        <div class="formulario-group">
+                            <label for="email">E-mail</label>
+                            <input id="email" name="email" placeholder="seu@email.com" required="" type="email" />
+                        </div>
+                        <div class="formulario-group">
+                            <label for="telefone">Telefone</label>
+                            <input id="telefone" name="telefone" placeholder="(00) 00000-0000" required=""
+                                type="text" />
+                        </div>
+                        <div class="formulario-group">
+                            <label for="senha">Senha</label>
+                            <input id="senha" name="senha" placeholder="Crie uma senha" required="" type="password" />
+                            <small>Mínimo de 8 caracteres</small>
+                        </div>
+                        <div class="formulario-group">
+                            <label for="confirmar-senha">Confirmar Senha</label>
+                            <input id="confirmar-senha" name="confirmar-senha" placeholder="Confirme sua senha"
+                                required="" type="password" />
+                        </div>
+                        <div class="formulario-group">
+                            <button class="botao" type="submit">Cadastrar</button>
+                        </div>
+                        <div class="auth-rodape">
+                            <p>Já tem uma conta? <a href="./login.html">Faça login</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
