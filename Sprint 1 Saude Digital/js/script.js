@@ -1,4 +1,5 @@
-// Toggle dos blocos de FAQ
+document.addEventListener('DOMContentLoaded', () => {
+  // Toggle dos blocos de FAQ
 document.querySelectorAll('.question-cabecalho').forEach(pergunta => {
   pergunta.addEventListener('click', () => {
     pergunta.parentElement.classList.toggle('active');
@@ -114,3 +115,4 @@ const mobileMenuButton = document.querySelector('.mobile-menu');
         mobileAuthButtons.style.display = mobileNav.classList.contains('active') ? 'block' : 'none';
     });
   }
+});
