@@ -101,3 +101,16 @@ if (registerForm) {
     window.location.href = './login.html';
   });
 }
+
+// Menu mobile
+const mobileMenuButton = document.querySelector('.mobile-menu');
+  const mobileNav = document.querySelector('.mobile-menu-navegacao');
+  const mobileAuthButtons = document.querySelector('.mobile-auth-buttons');
+
+  if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', () => {
+      if (mobileNav) mobileNav.classList.toggle('active');
+      if (mobileAuthButtons)
+        mobileAuthButtons.style.display = mobileNav.classList.contains('active') ? 'block' : 'none';
+    });
+  }

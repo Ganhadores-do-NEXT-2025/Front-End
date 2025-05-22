@@ -328,3 +328,131 @@ footer .container-geral {
   padding: 1rem;
   text-align: center;
 }
+
+/* -- Config do Menu Hamburger Mobile -- */
+.mobile-menu {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.mobile-menu-navegacao {
+  display: none;
+  width: 100%;
+  background: white;
+  padding: 1rem 0;
+}
+
+.mobile-menu-navegacao ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1rem;
+}
+
+.mobile-menu-navegacao a {
+  color: var(--cor-texto);
+  font-weight: bold;
+}
+
+.mobile-menu-navegacao.active, .mobile-auth-buttons {
+  display: block;
+}
+
+.mobile-auth-buttons {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .botao {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul, nav, footer .container-geral, .rodape-secao {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  header .container-geral {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .cartao img {
+    border-radius: 25%;
+    max-width: 250px;
+  }
+
+  .secao-destaque .container-geral, .faq-container-geral .container-geral {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .secao-destaque-content, .secao-destaque-image, .faq-categories, .faq-questions {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer {
+    padding: 1rem 1rem 0.5rem;
+  }
+
+  .copyright {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    margin: 0;
+    border: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .container-geral {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  nav ul {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .secao-destaque .container-geral, .faq-container-geral .container-geral {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1300px) {
+  .container-geral {
+    max-width: 1200px;
+  }
+
+  .cartao img {
+    max-width: 350px;
+  }
+}
