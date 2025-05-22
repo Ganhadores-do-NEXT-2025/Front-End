@@ -85,7 +85,6 @@ img {
 }
 
 /* -- Estilizaçao do nosso Header -- */
-
 header {
   background: white;
   padding: 1rem 2rem;
@@ -141,7 +140,6 @@ nav a:hover {
 }
 
 /* -- Estilização da Main --  */
-
 .page-cabecalho {
   background: var(--cor-secundaria);
   color: white;
@@ -238,7 +236,6 @@ input, select {
 }
 
 /* -- Estilizando o footer -- */
-
 footer {
   background: var(--cor-footer);
   color: var(--cor-footer-texto);

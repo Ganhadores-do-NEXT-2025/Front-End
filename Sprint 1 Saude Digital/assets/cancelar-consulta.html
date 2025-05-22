@@ -47,7 +47,31 @@
     </header>
 
     <main>
-        
+        <section class="page-cabecalho">
+            <div class="container-geral">
+                <h2>Cancelar Consulta</h2>
+                <p>Selecione a consulta que deseja cancelar</p>
+            </div>
+        </section>
+
+        <section class="formulario-container-geral">
+            <div class="container-geral">
+                <form id="cancelarForm">
+                    <div class="formulario-group">
+                        <label for="consulta">Selecione a consulta:</label>
+                        <select id="consulta" name="consulta" required="">
+                            <option value="">-- Selecione --</option>
+                            <option value="000001">Consulta #000001 - Dr. Gabriel Azevedo (25/07/25 - 13h00)</option>
+                            <option value="000002">Consulta #000002 - Dra. Isabella Azevedo (20/08/25 - 17h30)</option>
+                        </select>
+                    </div>
+                    <div class="formulario-group">
+                        <button class="botao" type="submit">Confirmar Cancelamento</button>
+                        <a class="botao botao-outline" href="meus-agendamentos.html">Voltar</a>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer>
