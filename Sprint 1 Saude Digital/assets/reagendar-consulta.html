@@ -53,6 +53,44 @@
                 <p>Altere a data/horário da sua consulta</p>
             </div>
         </section>
+
+        <section class="formulario-container-geral">
+            <div class="container-geral">
+                <form id="reagendarForm">
+                    <div class="formulario-group">
+                        <label for="consulta">Selecione a consulta:</label>
+                        <select id="consulta" name="consulta" required="">
+                            <option value="">-- Selecione --</option>
+                            <option value="000001">Consulta #000001 - Dr. Gabriel Azevedo (25/07/25 - 13h00)</option>
+                            <option value="000002">Consulta #000002 - Dra. Isabella Azevedo (20/08/25 - 17h30)</option>
+                        </select>
+                    </div>
+                    <div class="formulario-group">
+                        <label for="novaData">Nova data:</label>
+                        <input id="novaData" name="novaData" required="" type="date" />
+                    </div>
+                    <div class="formulario-group">
+                        <label for="novoHorario">Novo horário:</label>
+                        <select id="novoHorario" name="novoHorario" required="">
+                            <option value="">-- Selecione --</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                        </select>
+                    </div>
+                    <div class="formulario-group">
+                        <button class="botao" type="submit">Confirmar Reagendamento</button>
+                        <a class="botao botao-outline" href="meus-agendamentos.html">Voltar</a>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer>

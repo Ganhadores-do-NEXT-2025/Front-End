@@ -26,19 +26,23 @@ function aplicarMascaraTelefone(input) {
   });
 }
 
-// Tratamento do formulário de reagendamento/cancelamento
-const consultaForm = document.getElementById('reagendarForm');
+// Tratamento do formulário de reagendamento OU cancelamento
+const consultaForm = document.getElementById('reagendarForm') || document.getElementById('cancelarForm');
 if (consultaForm) {
   consultaForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const botao = consultaForm.querySelector('button[type="submit"]');
-    const textoBotao = botao.textContent.toLowerCase();
-    if (textoBotao.includes('reagendar')) {
+    const botao = e.submitter;
+    const textoBotao = botao?.textContent.toLowerCase();
+
+    if (textoBotao.includes('reagend')) {
       alert('Consulta reagendada com sucesso!');
-    } else if (textoBotao.includes('cancelamento')) {
+      window.location.href = 'meus-agendamentos.html';
+    } else if (textoBotao.includes('cancel')) {
       alert('Consulta cancelada com sucesso!');
+      window.location.href = 'meus-agendamentos.html';
+    } else {
+      alert('Ação desconhecida.');
     }
-    window.location.href = 'meus-agendamentos.html';
   });
 }
 
